@@ -5,13 +5,13 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table
+@Table(name="processed-events")
 public class ProcessedEventEntity implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @GeneratedValue
+    private long id;
 
     @Column(nullable = false, unique = true)
     private String messageId;
